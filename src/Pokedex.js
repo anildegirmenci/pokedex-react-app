@@ -5,6 +5,7 @@ import Pokeball from './Pokeball';
 import { toFirstCharUppercase } from './Method';
 import axios from 'axios';
 import SearchIcon from '@material-ui/icons/Search';
+import EkinoksImg from './assets/images/ekinoks-icon.png';
 
 
 
@@ -24,11 +25,10 @@ const useStyles = makeStyles(theme => ({
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        // backgroundColor: fade(theme.palette.common.white, 0.15),
-        paddingLeft:'20px',
+        paddingLeft:'50px',
         paddingRight:'20px',
         marginTop: '5px',
-        marginBottom: '5px'
+        marginBottom: '5px',
     },
     searchIcon:{
         marginTop:'5px'
@@ -86,8 +86,9 @@ const Pokedex = props =>{
 
     return(
         <>
-            <AppBar position = "static">
-                <Toolbar >
+            <AppBar position = "static" style={{ background: '#c32b2b',width:'auto' }}>
+                <Toolbar>
+                <img src={EkinoksImg} style={{width:'100px'}} alt="Logo" />
                     <div className= {classes.searchContainer}>
                         <SearchIcon className={classes.searchIcon} />
                         <TextField onChange={handleSearchChange} label='Search a Pokémon' variant='standard' className={classes.searchInput} />
