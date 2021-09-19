@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     searchInput:{
         width:'350px',
         margin:'5px'
-    }
+    },
 
 }));
 
@@ -71,7 +71,6 @@ const Pokedex = props =>{
 
     const getPokemonCard = (pokemonId) => {
         const {id,name, sprite} = pokemonData[pokemonId];
-
         return(
         <Grid item xs={12} sm={4} key={pokemonId}>
             <Card onClick={() => history.push(`/${pokemonId}`)}>
@@ -87,8 +86,8 @@ const Pokedex = props =>{
     return(
         <>
             <AppBar position = "static" style={{ background: '#c32b2b',width:'auto' }}>
-                <Toolbar>
-                <img src={EkinoksImg} style={{width:'100px'}} alt="Logo" />
+                <Toolbar className="flex">
+                <img src={EkinoksImg} className="w-24" alt="Logo" />
                     <div className= {classes.searchContainer}>
                         <SearchIcon className={classes.searchIcon} />
                         <TextField onChange={handleSearchChange} label='Search a Pokémon' variant='standard' className={classes.searchInput} />
@@ -101,11 +100,11 @@ const Pokedex = props =>{
                     pokemonData[pokemonId].name.includes(filter) &&
                     getPokemonCard(pokemonId)
                 )}
+                
             </Grid>
             ): (
                 <Pokeball />
             )}
-            
         </>
     )
 }

@@ -4,3 +4,7 @@
 @tailwind utilities;
 
 html, body {margin: 0; height: 100%; overflow-x: hidden}
+
+.pokeBackground{
+    background-image: url('./assets/images/pokedex.png');
+}
