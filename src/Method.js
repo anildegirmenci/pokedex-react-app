@@ -7,13 +7,13 @@ export const catchPokemon = () =>{
     console.log(randomCatch);
     if (randomCatch === true) {
         pokemonHTML = 
-        `<div class='bg-green-600' text-gray-400 text-lg'>
+        `<div class='bg-green-600' w-full justify-center items-center text-gray-400 text-lg'>
             You've got the Pokémon. Well Done!
         </div>`
         
     }
     else {
-        pokemonHTML =  `<div class='bg-red-600' text-white 
+        pokemonHTML =  `<div class='bg-red-600'  w-full justify-center items-center text-white 
         text-lg'>
             Ah... You failed.
         </div>`

@@ -6,6 +6,7 @@ import { toFirstCharUppercase } from './Method';
 import axios from 'axios';
 import SearchIcon from '@material-ui/icons/Search';
 import EkinoksImg from './assets/images/ekinoks-icon.png';
+import PokeballIcon from './assets/images/pokeball.png'
 
 
 
@@ -87,7 +88,7 @@ const Pokedex = props =>{
         <>
             <AppBar position = "static" style={{ background: '#c32b2b',width:'auto' }}>
                 <Toolbar className="flex">
-                <img src={EkinoksImg} className="w-24" alt="Logo" />
+                    <a href='/'><img src={EkinoksImg} className="w-24" alt="Logo" /></a>
                     <div className= {classes.searchContainer}>
                         <SearchIcon className={classes.searchIcon} />
                         <TextField onChange={handleSearchChange} label='Search a Pokémon' variant='standard' className={classes.searchInput} />

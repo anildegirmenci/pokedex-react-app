@@ -7,4 +7,11 @@ html, body {margin: 0; height: 100%; overflow-x: hidden}
 
 .pokeBackground{
     background-image: url('./assets/images/pokedex.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.pokeContainer{
+    font-family: "Lucida Console", "Courier New", monospace !important;
 }
