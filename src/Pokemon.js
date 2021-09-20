@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './assets/style/PokedexStyle.css';
 import { Typography } from '@material-ui/core';
-import { toFirstCharUppercase, catchPokemon } from './Method';
-import Pokeball from './Pokeball';
+import { toFirstCharUppercase, catchPokemon } from './assets/scripts/Method';
+import Pokeball from './assets/scripts/Pokeball';
 import PokeballIcon from './assets/images/pokeball.png'
 import axios from 'axios';
 import './index.css';

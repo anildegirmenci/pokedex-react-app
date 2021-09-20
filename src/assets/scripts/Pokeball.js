@@ -1,5 +1,5 @@
 import React from 'react';
-import './assets/style/PokeballStyle.css';
+import '../style/PokeballStyle.css';
 
 export default function Pokeball() {
     return (
