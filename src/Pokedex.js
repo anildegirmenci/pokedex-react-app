@@ -97,7 +97,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const Pokedex = props => {
     const { history } = props;
     const classes = useStyles();
-    const [pokemonData, setPokemonData] = useState(undefined);
+    const [pokemonData, setPokemonData] = useState();
     const [filter, setFilter] = useState('');
     const [darkMode, setDarkMode] = useState(false);
 
