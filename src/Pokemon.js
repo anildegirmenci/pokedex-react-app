@@ -8,12 +8,16 @@ import PokeballIcon from './assets/images/pokeball.png'
 import axios from 'axios';
 import './index.css';
 
+
+
 const Pokemon = (props) => {
     const { history, match } = props;
     const { params } = match;
     const { pokemonId } = params;
     const [pokemon, setPokemon] = useState(undefined);
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+
 
     useEffect(() => {
         axios
@@ -26,29 +30,31 @@ const Pokemon = (props) => {
                 setPokemon(false);
             })
     }, [pokemonId]);
-
+    
     const generatePokemonJSX = () => {
         const { name, species, height, weight, types, sprites } = pokemon;
         const { front_default } = sprites;
         return (
-            <div className="pokeBackground">
-                <div className='text-gray-200 flex flex-col w-96' style={{ height: '530px' }}>
-                    <div className="pokeContainer text-2xl mt-20 justify-center items-center flex flex-row" variant='h4'>
-                        {toFirstCharUppercase(name)}
-                        <img className='justify-center items-center' src={front_default} alt="sprite" />
-                    </div>
-                    <div className=' pl-16 pokeContainer mt-2'>
-                        <div>{'Species: '}{toFirstCharUppercase(species.name)} </div>
-                        <div>{'Height: '}{height}{' "'} </div>
-                        <div>{'Weight: '}{weight}{' lbs'} </div>
-                        <div>{'Types: '} </div>{types.map((typeInfo) => {
-                            const { type } = typeInfo
-                            const { name } = type;
-                            return <div key={name}>{`${toFirstCharUppercase(name)}`}</div>
-                        })}
+
+                <div className="pokeBackground">
+                    <div className='text-gray-200 flex flex-col w-96' style={{ height: '530px' }}>
+                        <div className="pokeContainer text-2xl mt-20 justify-center items-center flex flex-row" variant='h4'>
+                            {toFirstCharUppercase(name)}
+                            <img className='justify-center items-center' src={front_default} alt="sprite" />
+                        </div>
+                        <div className=' pl-16 pokeContainer mt-2'>
+                            <div>{'Species: '}{toFirstCharUppercase(species.name)} </div>
+                            <div>{'Height: '}{height}{' "'} </div>
+                            <div>{'Weight: '}{weight}{' lbs'} </div>
+                            <div>{'Types: '} </div>{types.map((typeInfo) => {
+                                const { type } = typeInfo
+                                const { name } = type;
+                                return <div key={name}>{`${toFirstCharUppercase(name)}`}</div>
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
+
         );
     };
     return (
@@ -65,7 +71,7 @@ const Pokemon = (props) => {
                 </Tooltip>
                 <Tooltip title="Catch the Pokémon!">
                     <Box>
-                        <div className="w-10 cursor-pointer mr-2"><img className="catchPokeball" onClick={catchPokemon()} src={PokeballIcon} alt='Pokeball Logo' /></div>
+                        <div className="w-10 cursor-pointer mr-2"><img className="catchPokeball"  src={PokeballIcon} alt='Pokeball Logo' /></div>
                     </Box>
                 </Tooltip>
                 </div>
