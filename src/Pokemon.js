@@ -62,7 +62,6 @@ const Pokemon = (props) => {
             {pokemon === undefined && <Pokeball />}
             {pokemon !== undefined && pokemon && generatePokemonJSX()}
             {pokemon === false && <Typography>Pokemon not found :( </Typography>}
-            <div className="catched">
                 <div className="flex justify-center items-center my-6">
                 <Tooltip title="Set as Favorite">
                     <Box>
@@ -71,11 +70,10 @@ const Pokemon = (props) => {
                 </Tooltip>
                 <Tooltip title="Catch the Pokémon!">
                     <Box>
-                        <div className="w-10 cursor-pointer mr-2"><img className="catchPokeball"  src={PokeballIcon} alt='Pokeball Logo' /></div>
+                        <div className="w-10 cursor-pointer mr-2"><img className="catchPokeball" onClick={() => catchPokemon()} src={PokeballIcon} alt='Pokeball Logo' /></div>
                     </Box>
                 </Tooltip>
                 </div>
-            </div>
             {pokemon !== undefined && (<div className="cursor-pointer px-14 py-4 bg-gray-400 rounded justify-center items-center hover:bg-gray-500" variant="contained" onClick={() => history.push("/")}>Back 2 Pokédex</div>)}
 
         </div>
